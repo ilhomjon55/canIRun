@@ -6,11 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
-  <title>Document</title>
+  <title>Can I Run?</title>
 </head>
 
 <body>
+  <div class="container">
+    <h1 class="h3 text-center my-4">Can I run?</h1>
+    <output class="result-box text-center d-block h1 alert alert-info">
+      <span class="positive-answer">YES</span>
+      /
+      <span class="Negative Answer">NO</span>
+    </output>
+    <form class="form-main row col-8 justify-content-center mx-auto" action="https://echo.htmlacademy.ru/" method="GET">
+      <div class="form-group col-12 px-0">
+        <label>Temperature:</label>
+        <input class="temperature-input form-control" type="text" name="temperature_input"
+          placeholder="Enter temperature">
+      </div>
+      <div class="col-12 form-group form-check">
+        <input class="rain-input form-check-input" type="checkbox" value="raining" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Is it raining?
+        </label>
+      </div>
+      <div class="col-12 form-group  form-check">
+        <input class="fitness-input form-check-input" type="checkbox" value="fitness" id="defaultCheck2">
+        <label class="form-check-label" for="defaultCheck2">
+          Is fitness center open?
+        </label>
+      </div>
 
+    </form>
+  </div>
 
 
 
