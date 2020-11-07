@@ -11,31 +11,29 @@
 
 <body>
   <div class="container">
-    <h1 class="h3 text-center my-4">Can I run?</h1>
-    <output class="result-box text-center d-block h1 alert alert-info">
-      <span class="positive-answer">YES</span>
-      /
-      <span class="Negative Answer">NO</span>
+    <h1 class="h3 text-center my-4 text-info font-weight-bold">Can I run?</h1>
+    <output class="result-box text-center d-block h1 alert">
     </output>
-    <form class="form-main row col-8 justify-content-center mx-auto" action="https://echo.htmlacademy.ru/" method="GET">
+    <form class="form-main row col-8 justify-content-center mx-auto" action="https://echo.htmlacademy.ru/" method="GET"
+      autocomplete="off">
       <div class="form-group col-12 px-0">
-        <label>Temperature:</label>
-        <input class="temperature-input form-control" type="text" name="temperature_input"
-          placeholder="Enter temperature">
+        <label>Temperature (C°):</label>
+        <input class="temperature-input form-control" type="number" name="temperature_input"
+          placeholder="Enter temperature" required>
       </div>
       <div class="col-12 form-group form-check">
-        <input class="rain-input form-check-input" type="checkbox" value="raining" id="defaultCheck1">
+        <input class="rain-input form-check-input" type="checkbox" id="defaultCheck1" value="on">
         <label class="form-check-label" for="defaultCheck1">
           Is it raining?
         </label>
       </div>
       <div class="col-12 form-group  form-check">
-        <input class="fitness-input form-check-input" type="checkbox" value="fitness" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
+        <input class="fitness-input form-check-input" type="checkbox" id="defaultCheck2" value="on">
+        <label class=" form-check-label" for="defaultCheck2">
           Is fitness center open?
         </label>
       </div>
-
+      <button class="btn btn-info">get answer</button>
     </form>
   </div>
 
