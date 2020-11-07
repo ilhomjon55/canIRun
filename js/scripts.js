@@ -8,22 +8,38 @@ var elTemperatureInput = document.querySelector('.temperature-input');
 var elRainInput = document.querySelector('.rain-input');
 var elFitnessInput = document.querySelector('.fitness-input');
 
+// Add main function allowToRUN
 var allowToRun = function (evt) {
   evt.preventDefault();
 
+  // Assign input to new bindings
   var temperatureInput = parseFloat(elTemperatureInput.value.trim(), 10);
   var rainInput = elRainInput
   var fitnessInput = elFitnessInput;
 
+  // Check validation of input
+  elTemperatureInput.classList.remove('is-invalid');
+
+  if (isNaN(temperatureInput)) {
+    elTemperatureInput.classList.add('is-invalid');
+    return;
+  }
+  if (!temperatureInput) {
+    elTemperatureInput.classList.add('is-invalid');
+    return;
+  }
+
+
+  // Set min max temps
   var minTemperature = 5;
   var maxTemperature = 30;
 
   var answer;
   var answerStatus;
 
-
   var isTemperatureOkay = maxTemperature >= temperatureInput && temperatureInput >= minTemperature
-  console.log(isTemperatureOkay);
+
+  // Check if the input is valid
   if (isTemperatureOkay && !rainInput.checked) {
     answer = 'Yes!';
     answerStatus = 'success'
@@ -34,11 +50,14 @@ var allowToRun = function (evt) {
     answer = 'Stay home!';
     answerStatus = 'danger'
   }
+
+  // Give output
   elResultBox.classList.remove('alert-danger', 'alert-success');
   elResultBox.classList.add(`alert-${answerStatus}`);
   elResultBox.textContent = answer;
-}
+};
 
+// Add function to EventListeners
 elFormMain.addEventListener('submit', allowToRun);
 elRainInput.addEventListener('change', allowToRun);
 elRainInput.addEventListener('change', allowToRun);
